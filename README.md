@@ -9,7 +9,7 @@ Creating username and password to access the all tables. Then adding them into t
 CREATE LOGIN benz WITH PASSWORD = '12345qwer';
 create user benz for login benz
 ```
-### 2. Azure Data Factory
+### 2. Azure Data Factory & Data Lake GEN2
 Connect the ADF with SQL Server with an Integration Runtime. Using ***lookup*** function to add all tables in the ADF.
 ```
 SELECT 
@@ -20,3 +20,4 @@ INNER JOIN sys.schemas s
 ON t.schema_id = s.schema_id	
 WHERE s.name = 'dbo'
 ```
+The raw data are stored in the Data Lake GEN2
